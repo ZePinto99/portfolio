@@ -1,6 +1,8 @@
 import { motion, type Variants } from 'framer-motion';
 import { Scene } from '../three/Scene';
-import { OWNER } from '../../data/cv';
+import { OWNER, BOOT_SEQUENCE } from '../../data/cv';
+import { TerminalWindow } from '../ui/TerminalWindow';
+import { useTypewriter } from '../../hooks/useTypewriter';
 
 interface HeroProps {
   isMobile: boolean;
@@ -23,6 +25,13 @@ const NAV_ANCHORS = [
 ];
 
 export function Hero({ isMobile }: HeroProps) {
+  const { text, isDone } = useTypewriter({
+    lines: BOOT_SEQUENCE,
+    charDelay: 22,
+    lineDelay: 110,
+    startDelay: 900,
+  });
+
   return (
     <section
       id="hero"
@@ -181,8 +190,23 @@ export function Hero({ isMobile }: HeroProps) {
           </motion.div>
         </motion.div>
 
-        {/* Right: spacer for 3D terminal on desktop */}
-        {!isMobile && <div style={{ flex: '0 0 50%' }} />}
+        {/* Right: spacer for 3D terminal on desktop, inline terminal on mobile */}
+        {isMobile ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            style={{
+              width: '100%',
+              maxWidth: 340,
+              animation: 'terminalBob 4s ease-in-out infinite',
+            }}
+          >
+            <TerminalWindow text={text} isDone={isDone} />
+          </motion.div>
+        ) : (
+          <div style={{ flex: '0 0 50%' }} />
+        )}
       </div>
 
       {/* Scroll hint */}

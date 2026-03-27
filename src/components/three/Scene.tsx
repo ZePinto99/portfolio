@@ -48,7 +48,7 @@ export function Scene({ isMobile }: SceneProps) {
       <pointLight position={[5, 5, 5]} color="#00d4ff" intensity={1.6} />
       <pointLight position={[-5, -3, 2]} color="#7b2fff" intensity={0.9} />
       <ParticleField isMobile={isMobile} />
-      {!isMobile && <FloatingTerminal mouseRef={mouseRef} isMobile={isMobile} />}
+      {!isMobile && <FloatingTerminal mouseRef={mouseRef} />}
     </Canvas>
     </div>
   );
