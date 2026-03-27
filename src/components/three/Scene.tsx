@@ -16,9 +16,8 @@ export function Scene({ isMobile }: SceneProps) {
     const el = wrapperRef.current;
     if (!el) return;
     const onScroll = () => {
-      const isMobileView = window.innerWidth < 768;
-      const fadeStart = window.innerHeight * (isMobileView ? 0.25 : 0.4);
-      const fadeEnd = window.innerHeight * (isMobileView ? 0.65 : 0.85);
+      const fadeStart = window.innerHeight * 0.4;
+      const fadeEnd = window.innerHeight * 0.85;
       const progress = Math.max(0, Math.min(1, (window.scrollY - fadeStart) / (fadeEnd - fadeStart)));
       el.style.opacity = String(1 - progress);
     };
@@ -49,7 +48,7 @@ export function Scene({ isMobile }: SceneProps) {
       <pointLight position={[5, 5, 5]} color="#00d4ff" intensity={1.6} />
       <pointLight position={[-5, -3, 2]} color="#7b2fff" intensity={0.9} />
       <ParticleField isMobile={isMobile} />
-      <FloatingTerminal mouseRef={mouseRef} isMobile={isMobile} />
+      {!isMobile && <FloatingTerminal mouseRef={mouseRef} isMobile={isMobile} />}
     </Canvas>
     </div>
   );
