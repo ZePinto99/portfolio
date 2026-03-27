@@ -67,7 +67,7 @@ export const EXPERIENCE: ExperienceItem[] = [
 export const SKILLS: SkillCategory[] = [
   {
     category: 'Languages',
-    items: ['Java', 'JavaScript', 'TypeScript', 'C#'],
+    items: ['Java', 'C#'],
   },
   {
     category: 'Frameworks',
