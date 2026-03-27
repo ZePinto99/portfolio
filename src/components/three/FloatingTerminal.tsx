@@ -82,7 +82,7 @@ export function FloatingTerminal({ mouseRef, isMobile }: FloatingTerminalProps) 
 
   // On mobile, push terminal to the bottom third of the viewport so it doesn't
   // overlap the hero text which occupies the upper portion of the screen.
-  const yBase = isMobile ? -3.2 : 0;
+  const yBase = isMobile ? -2.8 : 0;
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;
@@ -97,7 +97,7 @@ export function FloatingTerminal({ mouseRef, isMobile }: FloatingTerminalProps) 
   });
 
   const xPos = isMobile ? 0 : 2.2;
-  const distanceFactor = isMobile ? 5.5 : 8;
+  const distanceFactor = isMobile ? 4.5 : 8;
 
   return (
     <group ref={groupRef} position={[xPos, yBase, 0]} rotation={[0, isMobile ? 0 : -0.22, 0]}>

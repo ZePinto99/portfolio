@@ -16,8 +16,9 @@ export function Scene({ isMobile }: SceneProps) {
     const el = wrapperRef.current;
     if (!el) return;
     const onScroll = () => {
-      const fadeStart = window.innerHeight * 0.4;
-      const fadeEnd = window.innerHeight * 0.85;
+      const isMobileView = window.innerWidth < 768;
+      const fadeStart = window.innerHeight * (isMobileView ? 0.25 : 0.4);
+      const fadeEnd = window.innerHeight * (isMobileView ? 0.65 : 0.85);
       const progress = Math.max(0, Math.min(1, (window.scrollY - fadeStart) / (fadeEnd - fadeStart)));
       el.style.opacity = String(1 - progress);
     };

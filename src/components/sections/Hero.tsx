@@ -46,7 +46,7 @@ export function Hero({ isMobile }: HeroProps) {
         flexDirection: isMobile ? 'column' : 'row',
         alignItems: 'center',
         justifyContent: isMobile ? 'flex-start' : 'flex-start',
-        paddingTop: isMobile ? 'clamp(4rem, 12vh, 6rem)' : 0,
+        paddingTop: isMobile ? 'clamp(2.5rem, 8vh, 4rem)' : 0,
         gap: isMobile ? '1.5rem' : 0,
         textAlign: isMobile ? 'center' : 'left',
       }}>

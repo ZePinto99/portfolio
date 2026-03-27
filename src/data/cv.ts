@@ -4,7 +4,7 @@ export const OWNER = {
   name: 'José Pinto',
   title: 'Backend Software Engineer',
   summary:
-    'Software Engineer with experience in backend development, microservices, and cloud computing — focused on building scalable, high-performance systems. Proven track record delivering RESTful APIs and event-driven solutions in fast-paced, cross-functional teams. Currently working on sports betting products at BLIP (FanDuel).',
+    'Software Engineer with experience in backend development, microservices, and cloud computing, focused on building scalable, high-performance systems. Proven track record delivering RESTful APIs and event-driven solutions in fast-paced, cross-functional teams. Currently working on sports betting products at BLIP (FanDuel).',
   email: 'z.miguelpinto@gmail.com',
   github: 'https://github.com/ZePinto99',
   linkedin: 'https://www.linkedin.com/in/jos%C3%A9-pinto-b60725114',
@@ -19,8 +19,8 @@ export const BOOT_SEQUENCE = [
   '> Role............Backend Software Engineer',
   '> Location.........Porto, Portugal',
   '> Company..........BLIP (FanDuel)',
-  '> Stack............Java · Spring Boot · AWS',
-  '> Languages........Portuguese · English C1',
+  '> Stack............Java · Spring Boot · Cloud',
+  '> Languages........Portuguese · English',
   '> Status...........Open to challenges ✓',
   '',
   '$ _',
@@ -67,7 +67,7 @@ export const EXPERIENCE: ExperienceItem[] = [
 export const SKILLS: SkillCategory[] = [
   {
     category: 'Languages',
-    items: ['Java', 'JavaScript', 'TypeScript', 'C#', 'HTML', 'CSS'],
+    items: ['Java', 'JavaScript', 'TypeScript', 'C#'],
   },
   {
     category: 'Frameworks',
@@ -75,7 +75,7 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     category: 'Cloud & Infra',
-    items: ['AWS', 'AWS SQS', 'Microservices', 'REST APIs', 'Event-Driven'],
+    items: ['AWS', 'Microservices', 'REST APIs', 'Event-Driven'],
   },
   {
     category: 'Databases',
@@ -83,7 +83,7 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     category: 'Practices',
-    items: ['OOP', 'Agile', 'Git', 'On-Call'],
+    items: ['Agile', 'Git', 'CI/CD'],
   },
 ];
 
